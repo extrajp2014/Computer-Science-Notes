@@ -1,3 +1,3 @@
 # Folders
-* Functions
+## Functions
 Example usages of bash common functions
