@@ -46,25 +46,40 @@ Example 2 - Inheritance
 class LatLon:
     
     def __init__(self, lat, lon):
+        '''
+        Define variables in class
+        '''
         self.lat = lat
         self.lon = lon
 
 class Waypoint(LatLon):
     
     def __init__(self, lat, lon, name):
+        '''
+        Define variables in class with inheritance
+        '''
         super().__init__(lat, lon)
         self.name = name
         
     def __str__(self):
+        '''
+        String output for user
+        '''
         return f'"{self.name}", {self.lat}, {self.lon}'
 
 class Geocache(Waypoint):
     def __init__(self, name, difficulty, size, lat, lon):
+        '''
+        Define variables in class with inheritance
+        '''
         self.difficulty = difficulty
         self.size = size
         super().__init__(name, lat, lon)
 
     def __str__(self):
+        '''
+        String output for user with inheritance method
+        '''
         return f"{super().__str__()} is inherited from Waypoint class"
 
 waypoint = Waypoint(lat=41.70505, lon=-121.51521, name='Catacombs')
