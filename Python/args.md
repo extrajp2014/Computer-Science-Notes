@@ -1,4 +1,4 @@
-#*args - Example
+# *args - Example
 ```python
 def f2(*args):
     return sum([*args])

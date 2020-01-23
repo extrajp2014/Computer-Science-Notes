@@ -1,3 +1,2 @@
-# Folders
-## Functions
-Example usages of bash common functions
+* /Snippets
+Example Snippet for bash common functions
