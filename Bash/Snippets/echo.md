@@ -23,5 +23,11 @@ echo {$start..$end}  # fails to expand due to the evaluation order
 eval echo {$start..$end} # variable expansion occurs then resulting string is evaluated
 # 1 2 3 4 5 6 7 8 9 10
 
+a='hello:world:of:tomorrow'
+echo "${a%:*}" # hello:world:of
+echo "${a%%:*}" # hello
+echo "${a#*:}" # world:of:tomorrow
+echo "${a##*:}" # tomorrow
+
 NC='\033[0m'; BLUE='\033[0;34m'; echo -e "${BLUE}Change Color to Blue"; echo -e "${NC}"
 ```

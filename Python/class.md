@@ -53,14 +53,14 @@ class LatLon:
         self.lon = lon
 
 class Waypoint(LatLon):
-    
+
     def __init__(self, lat, lon, name):
         '''
         Define variables in class with inheritance
         '''
         super().__init__(lat, lon)
         self.name = name
-        
+
     def __str__(self):
         '''
         String output for user
@@ -70,7 +70,7 @@ class Waypoint(LatLon):
 class Geocache(Waypoint):
     def __init__(self, name, difficulty, size, lat, lon):
         '''
-        Define variables in class with inheritance
+        Define variables in class with inheritance variables
         '''
         self.difficulty = difficulty
         self.size = size
