@@ -5,8 +5,8 @@
 ssh-keygen -t rsa -b 4096
 ```
 - Example rsa key names
-> account1_rsa
-> account2_rsa
+1. account1_rsa
+2. account2_rsa
 
 ## Modify ssh config file to route ssh keys
 vim ~/.ssh/config
