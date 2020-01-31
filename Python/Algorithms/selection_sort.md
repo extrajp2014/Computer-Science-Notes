@@ -1,5 +1,4 @@
 Selection Sort
-
 ```python
 def selection_sort( arr ):
     # loop through n-1 elements
