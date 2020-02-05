@@ -17,6 +17,6 @@ def recipe_batches(recipe, ingredients):
 if __name__ == '__main__':
     recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
     ingredients = { 'milk': 232, 'butter': 100, 'flour': 51 }
-    batches=recipe_batches(recipe, ingredients), ingredients=ingredients)
+    batches=recipe_batches(recipe, ingredients)
     print(f"{batches} batches can be made from the available ingredients: {ingredients}.")
 ```
