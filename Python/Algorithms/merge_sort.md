@@ -1,0 +1,43 @@
+# Merge Sort - Using Recursion
+
+```python
+def merge( arrA, arrB ):
+    '''
+    merge 2 arrays together
+    '''
+    elements = len( arrA ) + len( arrB )
+    merged_arr = [0] * elements
+
+    idx_arrA = 0
+    idx_arrB = 0
+    for i in range(elements):
+        if len(arrA) == idx_arrA:
+            for j in range(idx_arrB, len(arrB)):
+                merged_arr[i + j - idx_arrB] = arrB[j]
+            return merged_arr
+        elif len(arrB) == idx_arrB:
+            for j in range(idx_arrA, len(arrA)):
+                merged_arr[i + j - idx_arrA] = arrA[j]
+            return merged_arr
+        elif arrA[idx_arrA] < arrB[idx_arrB]:
+            merged_arr[i] = arrA[idx_arrA]
+            idx_arrA += 1
+        else:
+            merged_arr[i] = arrB[idx_arrB]
+            idx_arrB += 1
+
+    return (merged_arr)
+
+def merge_sort( arr ):
+    '''
+    Merge Sort function USING RECURSION
+    '''
+    if len(arr)<2:
+        return arr
+    else:
+        mid_idx_arr = len(arr) // 2
+        arr_left = merge_sort(arr[:mid_idx_arr])
+        arr_right = merge_sort(arr[mid_idx_arr:])
+
+    return merge(merge_sort(arr_left), merge_sort(arr_right))
+```
