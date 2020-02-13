@@ -1,3 +1,18 @@
+Example
+```bash
+# Check Weather
+curl http://wttr.in/atlanta
+
+# Check current IP
+curl ipinfo.io
+curl -s http://whatismyip.akamai.com
+curl -s icanhazip.com
+
+# Website Status
+curl -Is https://www.twitter.com -L | grep HTTP/
+curl https://www.twitter.com -m 5 -s -f -o /dev/null && echo "SUCCESS" || echo "UNREACHABLE"
+```
+
 Send mail using curl
 ```bash
 echo "To:receiver@gmail.net" > /tmp/mail.txt
