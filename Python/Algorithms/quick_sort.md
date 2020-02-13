@@ -1,9 +1,9 @@
-Quick Sort
+# Quick Sort
 
 ```python
 def quick_sort(arr):
     """
-    quick sort function
+    O(nlogn) average run time
     """
     if len(arr) <= 1:
         return arr
@@ -14,4 +14,23 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
 
     return quick_sort(left) + mid + quick_sort(right)
+```
+
+```python
+def quicksort(arr):
+    '''
+    O(nlogn) average run time
+    '''
+    if arr == []:
+        return arr
+
+    left, right = [], []
+    pivot = arr[0]
+    for item in arr[1:]:
+        if pivot < item:
+            left.append(pivot)
+        else:
+            right.append(pivot)
+
+    return quicksort(left) + [pivot] + quicksort(right)
 ```
