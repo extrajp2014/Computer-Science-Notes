@@ -277,7 +277,6 @@ class Node:
     def getNextNode(self):
         return self.link
 
-
 if __name__ == '__main__':
 
     # creating LinkedList
@@ -289,7 +288,6 @@ if __name__ == '__main__':
     myList.addToStart(3)
     myList.addToStart(2)
     myList.addToStart(1)
-
 
     myList.display()
 
@@ -333,7 +331,6 @@ if __name__ == '__main__':
     # removing all elements from the LinkedList
     myList2.clear()
     myList2.display()
-
 
     # printing a string of elements of the LinkedList
     print(myList.toString(","))
