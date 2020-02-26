@@ -9,7 +9,7 @@ django-admin startproject repository_name
 cd repository_name
 ```
 
-* Run web application
+* Run server
 ```bash
 python3 manage.py runserver
 ```
