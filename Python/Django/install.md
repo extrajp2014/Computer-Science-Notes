@@ -1,8 +1,9 @@
 * Install Django in anaconda environment
 ```bash
-# exit current environment
+# exit current anaconda environment
 conda deactivate
-conda create -n djangoenv python=3.6 anaconda
+# start install
+conda create -n cspt5env python=3.8.1 anaconda
 conda activate djangoenv
 conda install -c anaconda django  
 django-admin startproject repository_name
