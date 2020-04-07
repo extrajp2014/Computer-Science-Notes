@@ -1,5 +1,10 @@
 # For Loop Example
 ```bash
+# Counter
+for i in $(seq 0 20); do
+    echo "$i"
+done
+
 # Get word from file into loop (parse based on space)
 filename=~/Log/scheduleJob.log
 filelines=`cat $filename`
@@ -14,6 +19,7 @@ list=($(cat ~/Log/scheduleJob.log))
 for i in ${list[*]}; do
     echo "$i"
 done
+
 ```
 
 # While Loop Example
