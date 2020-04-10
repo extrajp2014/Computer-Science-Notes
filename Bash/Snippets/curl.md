@@ -29,10 +29,10 @@ rm /tmp/mail.txt
 * PushBullet API
 ```bash
 # create push
-access_token = "blahblahblah"
-body = "text content"
-title = "title"
-email = "something@gmail.com"
+access_token="o.blahblahblah"
+body="text content"
+title="title"
+email="something@gmail.com"
 
 curl --header 'Access-Token: $access_token' \
      --header 'Content-Type: application/json' \
