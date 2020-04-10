@@ -8,6 +8,9 @@ conda env export > environment.yml
 # To recreate the environment you can do the following:
 conda env create -f environment.yml
 
+# Useful jupyter package
+pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install
+
 # Start out
 conda deactivate
 conda activate environment_name
