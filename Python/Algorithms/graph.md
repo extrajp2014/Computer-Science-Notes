@@ -225,7 +225,6 @@ class Graph:
 
 if __name__ == '__main__':
     graph = Graph()  # Instantiate your graph
-    # https://github.com/LambdaSchool/Graphs/blob/master/objectives/breadth-first-search/img/bfs-visit-order.png
     graph.add_vertex(1)
     graph.add_vertex(2)
     graph.add_vertex(3)
@@ -563,13 +562,11 @@ class SocialGraph:
         self.last_id = 0
         self.users = {}
         self.friendships = {}
-        # !!!! IMPLEMENT ME
 
         # Add users
         for user in range(num_users):
             self.add_user(user)
 
-        # Instructor solution
         # Create friendships
         friendships = []
         for user in range(1, self.last_id + 1):
@@ -629,7 +626,6 @@ class SocialGraph:
         The key is the friend's ID and the value is the path.
         """
         visited = {}  # Note that this is a dictionary, not a set
-        # !!!! IMPLEMENT ME
 
         for user in self.users:
             # Get the shortest path
