@@ -22,6 +22,7 @@ Personal Computer Science Notes
 * [Resources](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Resources)
 * [Ruby](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Ruby)
 * [Scala](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Scala)
+* [SQL](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/SQL)
 * [Terraform](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Terraform)
 
 ## Author
