@@ -1,0 +1,95 @@
+---
+- name: Get input as list from command line
+  hosts: local_host
+  vars:
+    tsUser: "{{args[0]}}"
+    tsHost: "{{args[1]}}"
+    tsPort: "{{args[2]}}"
+    tsPassword: "{{args[3]}}"
+    tsKey: "{{args[4]}}"
+    tsSudoUser: "{{args[5]}}"
+    tsSudoStrategy: "{{args[6]}}"
+    targetUser: "{{args[7]}}"
+    targetHost: "{{args[8]}}"
+    targetPort: "{{args[9]}}"
+    targetPassword: "{{args[10]}}"
+    targetKey: "{{args[11]}}"
+    targetKeyFileName: "{{args[12]}}"
+    targetKeyDir: "{{args[13]}}"
+    targetSudoUser: "{{args[14]}}"
+    targetSudoStrategy: "{{args[15]}}"
+    testCmds: "{{args[16]}}"
+    nfsMount: "{{args[17]}}"
+    namespace: "{{args[18]}}"
+    targetProvider: "{{args[19]}}"
+    type_name: "{{args[20]}}"
+    proxy_addr: "{{args[21]}}"
+    nfs_server_ip: "{{args[22]}}"
+    opc_storage_container: "{{args[23]}}"
+
+    SUDO_STRATEGY_SUDOP: sudop
+    SUDO_STRATEGY_SUDO: sudo
+    TRANSFER_SERVER_FAILURE_STATUS: 1
+    SERVER_FAILURE_STATUS: 2
+    DATABASE_FAILURE_STATUS: 3
+    OTHER_FAILURE_STATUS: 4
+    TARGET_PROVIDER_ONPREM: ONPREM
+    TEST_TYPE_TARGET: target
+
+    sudo_strat_strategy: "{{tsSudoStrategy}}"
+    sudo_strat_password: "{{tsPassword}}"
+    sudo_strat_sudoUser: "{{tsSudoUser}}"
+    sudo_strat_inputCmd: 'whoami'
+    sudo_strat_cmd: echo '{{sudo_strat_password}}' | sudo -S su - {{sudo_strat_sudoUser}} -c '{{sudo_strat_inputCmd}}'
+
+  tasks:
+    - name: conditional sudo_strat_cmd - run command with sudop 
+      set_fact: 
+        sudo_strat_cmd: echo '{{sudo_strat_password}}' | sudo -S su - {{sudo_strat_sudoUser}} -c '{{sudo_strat_inputCmd}}'
+      when: sudo_strat_strategy=='{{SUDO_STRATEGY_SUDOP}}'
+
+    - name: conditional sudo_strat_cmd - run command with sudo 
+      set_fact: 
+        sudo_strat_cmd: sudo -S su - {{sudo_strat_sudoUser}} -c '{{sudo_strat_inputCmd}}'
+      when: sudo_strat_strategy=='{{SUDO_STRATEGY_SUDO}}'
+
+    - name: conditional sudo_strat_cmd - run normal 
+      set_fact: 
+        sudo_strat_cmd: "{{sudo_strat_inputCmd}}"
+      when: sudo_strat_strategy==''
+
+    - name : Run sudo_strat
+      shell: "{{sudo_strat_cmd}}"
+      register: result
+
+    - name: check the result
+      debug:
+        msg: "{{result}}"
+  
+    - debug:
+        msg: 'Use these args: 
+              tsUser: {{tsUser}}
+              tsHost: {{tsHost}}
+              tsPort: {{tsPort}}
+              tsPassword: {{tsPassword}}
+              tsKey: {{tsKey}}
+              tsSudoUser: {{tsSudoUser}}
+              tsSudoStrategy: {{tsSudoStrategy}}
+              targetUser: {{targetUser}}
+              targetHost: {{targetHost}}
+              targetPort: {{targetPort}}
+              targetPassword: {{targetPassword}}
+              targetKey: {{targetKey}}
+              targetKeyFileName: {{targetKeyFileName}}
+              targetKeyDir: {{targetKeyDir}}
+              targetSudoUser: {{targetSudoUser}}
+              targetSudoStrategy: {{targetSudoStrategy}}
+              testCmds: {{testCmds}}
+              nfsMount: {{nfsMount}}
+              namespace: {{namespace}}
+              targetProvider: {{targetProvider}}
+              type_name: {{type_name}}
+              proxy_addr: {{proxy_addr}}
+              nfs_server_ip: {{nfs_server_ip}}
+              opc_storage_container: {{opc_storage_container}}
+              '
