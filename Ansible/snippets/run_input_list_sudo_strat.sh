@@ -1,0 +1,1 @@
+ansible-playbook input_list_sudo_strat.yml -e "{'args':[tsUser,tsHost,tsPort,tsPassword,tsKey,tsSudoUser,tsSudoStrategy,targetUser,targetHost,targetPort,targetPassword,targetKey,targetKeyFileName,targetKeyDir,targetSudoUser,targetSudoStrategy,testCmds,nfsMount,namespace,targetProvider,type_name,proxy,nfs_server_ip,opc_storage_container]}"
