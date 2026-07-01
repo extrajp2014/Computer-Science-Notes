@@ -6,6 +6,7 @@ Personal Computer Science Notes
 * [Assembly](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Assembly)
 * [Bash](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Bash)
   * [Git](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Bash/Git)
+  * [Snippets](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Bash/Snippets)
 * [C++](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Cplusplus)
 * [Docker](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Docker)
 * [Golang](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Golang)
