@@ -15,6 +15,7 @@ Personal Computer Science Notes
 * [Javascript](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Javascript)
   * [Angular](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Javascript/angular_overview.md)
   * [Nodejs](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Javascript/nodejs_overview.md)
+  * [React](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Javascript/react_overview.md)
 * [Markdown](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Markdown)
 * [Perl](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Perl)
 * [Python](https://github.com/extrajp2014/Computer-Science-Notes/tree/master/Python)
